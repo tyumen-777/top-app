@@ -2,6 +2,7 @@
 import Htag from "../components/Htag/Htag";
 import Button from "../components/Button/Button";
 import P from '../components/P/P';
+import Tag from "../components/Tag/Tag";
 
 
 export default function Home(): JSX.Element {
@@ -13,6 +14,7 @@ export default function Home(): JSX.Element {
         <P size='l'> Big text</P>
         <P size='m'> Mid text</P>
         <P size='s'> Small text</P>
+        <Tag color='green'>Small</Tag>
     </div>
   );
 }
