@@ -1,10 +1,9 @@
-import cn from 'classnames';
 import {LayoutProps} from './Layout.props';
 import styles from './Layout.module.css';
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import {Component, FunctionComponent} from "react";
+import { FunctionComponent} from "react";
 import {AppContextProvider, IAppContext} from "../context/app.context";
 
 
@@ -18,7 +17,7 @@ export const Layout = ({children}: LayoutProps): JSX.Element => {
                 </div>
             <Footer className={styles.footer} />
         </div>
-    )
+    );
 };
 
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
