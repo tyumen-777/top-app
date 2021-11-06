@@ -12,10 +12,10 @@ return(
     })}
     {...props}
     >
-        
+
         {children}
     </p>
-)
+);
 };
 
 export default P;
