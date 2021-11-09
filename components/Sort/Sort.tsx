@@ -21,8 +21,9 @@ return(
                 [styles.active]: sort == SortEnum.Price
             })}
         >
-          <SortIcon className={styles.icon}/>По&nbsp;цене
+          <SortIcon className={styles.icon}/>По цене
         </span>
+
     </div>
 );
 };

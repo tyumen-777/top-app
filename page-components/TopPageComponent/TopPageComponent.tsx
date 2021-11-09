@@ -7,17 +7,24 @@ import {TopLevelCategory} from "../../interfaces/page.interface";
 import Advantages from "../../components/Advantages/Advantages";
 import Sort from "../../components/Sort/Sort";
 import {SortEnum} from "../../components/Sort/Sort.props";
+import React from "react";
+import {sortReducer} from "./sort.reducer";
 
 const TopPageComponent = ({page, products, firstCategory}: TopPageComponentProps): JSX.Element => {
+    const [{products: sortedProducts, sort} , dispatchSort] = React.useReducer(sortReducer, {products, sort: SortEnum.Rating});
+    const setSort = (sort: SortEnum) => {
+        dispatchSort({ type: sort});
+    };
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
                 <Htag tag={'h1'}>{page.title}</Htag>
                 {products && <Tag color={'green'} size={'m'}>{products.length}</Tag>}
-                <Sort setSort={() => {}} sort={SortEnum.Rating}/>
+                <Sort setSort={setSort} sort={sort}/>
             </div>
             <div>
-                {products && products.map(p => (
+                {sortedProducts && sortedProducts.map(p => (
                     <div key={p._id}>
                         {p.title}
                     </div>))}
