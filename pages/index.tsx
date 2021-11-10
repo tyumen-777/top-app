@@ -8,6 +8,7 @@ import {withLayout} from "../layout/Layout";
 import {GetStaticProps} from "next";
 import axios from 'axios';
 import {MenuItem} from "../interfaces/menu.interface";
+import Input from "../components/Input/Input";
 
 
 function Home({menu}: HomeProps): JSX.Element {
@@ -23,7 +24,7 @@ function Home({menu}: HomeProps): JSX.Element {
             <P size='s'> Small text</P>
             <Tag color='green'>Small</Tag>
             <Rating rating={4} isEditable/>
-
+            <Input placeholder={'Поиск...'}/>
         </div>
     );
 }
